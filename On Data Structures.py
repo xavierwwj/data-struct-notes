@@ -179,7 +179,7 @@ On data structures and comparisons based on a set of fundamental algorithms
         -----------------------------------------------------------------------
         |   insert(S,x)   |    O(n), O(1)    | O(1), O(log(n))** |  O(log(n)) |
         |      max(S)     |    O(1), O(n)    |       O(1)        |   O(1)***  |
-        |  extract_max(S) |    O(1), O(n)    |       O(1)        |   O(1)***  |
+        |  extract_max(S) |    O(1), O(n)    |     O(log(n))     |   O(1)***  |
         |   search(S,x)   |  O(log(n)), O(n) |       O(n)        |  O(log(n)) |
         |     create()    | O(nlog(n)), O(1) |       O(n)        | O(nlog(n)) |
         -----------------------------------------------------------------------
@@ -220,6 +220,9 @@ On data structures and comparisons based on a set of fundamental algorithms
         B. Given a node of index i,
             1) index of left child = 2*i
             2) index of right child = 2*i + 1
+            3) parent = floor(i/2)
+            4) ALL OF THE ABOVE is assuming index 0 is ignored.
+            If however index 0 is included, +1 to 1) and 2), floor(i-1/2) for 3)
     
     1.2.2 Basic Operations
 
